@@ -1,3 +1,4 @@
+autocmd!
 set tabstop=4
 set timeoutlen=600
 set expandtab "in insert mode, pressing tab now actually puts spaces
@@ -45,7 +46,8 @@ let maplocalleader = "\\"
 :vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
 "insert
 
-"autocommands
-autocmd!
-:au FileType java nnoremap <buffer> <localleader>c Apublic class Solution {<cr>}<esc>kfS<esc>
-:au FileType java nnoremap <buffer> <localleader>m Apublic static void main(String[] args) {<cr>}<esc>ko
+augroup vimrc
+    autocmd!
+    :au FileType java nnoremap <buffer> <localleader>c Apublic class Solution {<cr>}<esc>kfS<esc>
+    :au FileType java nnoremap <buffer> <localleader>m opublic static void main(String[] args) {<cr>}<esc>O
+augroup END
